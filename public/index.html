@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<title>Video Call</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+	<link href="/styles.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Montserrat"
+	/>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	/>
+	<style>
+	</style>
+	<body>
+		<div class="w3-main w3-padding-large" id="removing-left-margin" style="margin-center">
+			<header
+				class="w3-container w3-center"
+				style="padding: 0px 0px"
+				id="home"
+			>
+			<div id="video-chat-lobby">
+				<h1>Video call</h1>
+
+				<h3 class="w3-padding-16">One on one proctoring exam</h3>
+					<p>
+						<input
+							class="w3-input w3-padding-16 w3-border"
+							type="text"
+							placeholder="Room name or id*"
+                               required
+							name="Name"
+							id="roomName"
+							style="width: 70%; margin-left: 18%;"
+						/>
+					</p>
+					<p>
+<br><br>						<button
+							class="w3-button w3-blue w3-padding-16"
+							id="join"
+						>
+						 Call will be started immediately <br>after clicking onto this button
+						</button>
+<br><br>					<br>
+						<br>
+					</p>
+				</div>
+				<div id="video-chat-room" style="display: none">
+					<video id="user-video" muted="#"></video>
+					<video id="peer-video" type="hidden"></video>
+				</div>
+				<div class="btn-group" id="btn-group" style="display: none">
+					<button id="leaveRoom" style="background-color:#DA3B35"> <i class="fa fa-phone fa-2x fa-rotate-180" aria-hidden="true"></i></button>
+				</div>
+			</header>
+
+		</div>
+
+		<script>
+			function openNav() {
+				document.getElementById('mySidebar').style.width = '60%';
+				document.getElementById('mySidebar').style.display = 'block';
+			}
+
+			function closeNav() {
+				document.getElementById('mySidebar').style.display = 'none';
+			}
+		</script>
+		<script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+		<script src="/chat.js"></script>
+	</body>
+</html>
